@@ -1,0 +1,38 @@
+---
+llm_providers:
+  - name: p1
+    url: url1
+    credential_path: key1
+    models:
+      - name: m1
+        url: murl1
+        credential_path: mkey1
+      - name: m2
+        url: murl2
+        credential_path: mkey2
+  - name: p2
+    url: url2
+    credential_path: key2
+    models:
+      - name: m1
+        url: murl1
+        credential_path: mkey1
+      - name: m2
+        url: murl2
+        credential_path: mkey2
+ols_config:
+  enable_debug_ui: false
+  conversation_cache:
+    type: memory
+    redis:
+      url: 127.0.0.1:1234
+      credentials:
+        user: root
+        password: pwd123
+    memory:
+      max_entries: 1000
+  logger_config:
+    level: info
+    filename: /tmp/ols.out
+  default_model: p1/m1
+  classifier_model: p2/m1

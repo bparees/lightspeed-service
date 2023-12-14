@@ -5,6 +5,7 @@ ibm_watson_machine_learning
 kubernetes
 langchain
 llama_index
+munch
 torch
 transformers
 uvicorn
